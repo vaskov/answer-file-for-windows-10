@@ -7,7 +7,7 @@
 Файл ответов рассчитан на русскую версию ОС. Изменить его для версии с другим языком не составит большого труда. Сделать это можно в обычном текстовом редакторе путем правок нескольких параметров:
 
 ```xml
-<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<InputLocale>ru-RU; en-US</InputLocale>
 	<SystemLocale>ru-RU</SystemLocale>
 	<UILanguage>ru-RU</UILanguage>
