@@ -58,29 +58,29 @@
             </UserAccounts>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <Description>Control Panel Icon Size</Description>
+                    <Description>Маленький размер иконок Панели управления</Description>
                     <CommandLine>reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel /v AllItemsIconView /t REG_DWORD /d 1 /f</CommandLine>
                     <Order>1</Order>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel /v StartupPage /t REG_DWORD /d 1 /f</CommandLine>
-                    <Description>Control Panel View</Description>
+                    <Description>Изменение вида Панели управления на значки</Description>
                     <Order>2</Order>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd /C wmic useraccount where name=&quot;admin&quot; set PasswordExpires=false</CommandLine>
                     <Order>3</Order>
-                    <Description>Password Never Expires</Description>
+                    <Description>Срок действия пароля никогда не истекает</Description>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd /C net localgroup Пользователи admin /delete</CommandLine>
                     <Order>4</Order>
-                    <Description>Deleting from the Users group</Description>
+                    <Description>Удаление пользователя admin из группы Пользователи</Description>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <Order>5</Order>
                     <CommandLine>powershell -command &quot;(Get-Volume).DriveLetter | Foreach-Object {if (Test-Path &quot;${PSItem}:\reg\tweaks.reg&quot;) {reg load HKEY_USERS\Custom &quot;%systemdrive%\Users\Default\NTUSER.DAT&quot;; reg import &quot;${PSItem}:\reg\tweaks.reg&quot;; reg unload HKEY_USERS\Custom}}&quot;</CommandLine>
-                    <Description>Import tweaks from REG</Description>
+                    <Description>Импорт настроек из reg-файла (команда взята с outsidethebox.ms)</Description>
                 </SynchronousCommand>
             </FirstLogonCommands>
             <BluetoothTaskbarIconEnabled>false</BluetoothTaskbarIconEnabled>
